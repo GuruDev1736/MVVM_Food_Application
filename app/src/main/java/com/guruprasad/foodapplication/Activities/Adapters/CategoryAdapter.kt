@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.guruprasad.foodapplication.Activities.CategoryMealsActivity
 import com.guruprasad.foodapplication.Activities.MealActivity
 import com.guruprasad.foodapplication.Activities.ui.home.HomeFragment
 import com.guruprasad.foodapplication.Model.Category
@@ -31,6 +32,12 @@ class CategoryAdapter(private val context: Context, private val dataList : List<
         with(holder.binding){
             Glide.with(context).load(dataList.get(position).strCategoryThumb).into(imgCategory)
             tvCategoryName.text = dataList.get(position).strCategory
+            layout.setOnClickListener{
+                context.startActivity(Intent(context,CategoryMealsActivity::class.java)
+                    .putExtra("categoryName",dataList.get(position).strCategory)
+                )
             }
+
+        }
         }
     }

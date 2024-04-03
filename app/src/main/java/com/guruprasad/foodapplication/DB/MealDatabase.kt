@@ -21,7 +21,7 @@ abstract class MealDatabase : RoomDatabase() {
         fun getInstance (context: Context) : MealDatabase{
             if (INSTANCE == null)
             {
-                INSTANCE = Room.databaseBuilder(context,MealDatabase::class.java,"Meal.db")
+                INSTANCE = Room.databaseBuilder(context,MealDatabase::class.java,"MealDB")
                     .fallbackToDestructiveMigration().build()
             }
 

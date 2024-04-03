@@ -1,17 +1,13 @@
 package com.guruprasad.foodapplication.ViewModel
 
-import android.R
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.guruprasad.foodapplication.API.APIUtilities
-import com.guruprasad.foodapplication.Model.Category
 import com.guruprasad.foodapplication.Model.CategoryResponseModel
 import com.guruprasad.foodapplication.Model.GetMealByIdResponseModel
 import com.guruprasad.foodapplication.Model.Meal
-import com.guruprasad.foodapplication.Model.MealX
-import com.guruprasad.foodapplication.Model.MealXX
 import com.guruprasad.foodapplication.Model.PopularMealResponseModel
 import com.guruprasad.foodapplication.Model.RandomMealResponseModel
 import retrofit2.Call
@@ -21,7 +17,7 @@ import retrofit2.Response
 class HomeViewModel() : ViewModel() {
 
     private var RandomMealLiveData = MutableLiveData<Meal>()
-    private var GetMealByIdLiveData = MutableLiveData<MealX>()
+    private var GetMealByIdLiveData = MutableLiveData<Meal>()
     private var PopularMealLiveData = MutableLiveData<PopularMealResponseModel>()
     private var CategoryLiveData = MutableLiveData<CategoryResponseModel>()
 
@@ -135,7 +131,7 @@ class HomeViewModel() : ViewModel() {
         return RandomMealLiveData
     }
 
-    fun ObserveGetMealByIdLiveData():LiveData<MealX>{
+    fun ObserveGetMealByIdLiveData():LiveData<Meal>{
         return GetMealByIdLiveData
     }
 

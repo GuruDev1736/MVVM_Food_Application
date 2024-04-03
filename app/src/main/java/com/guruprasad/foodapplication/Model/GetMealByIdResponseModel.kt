@@ -1,5 +1,5 @@
 package com.guruprasad.foodapplication.Model
 
 data class GetMealByIdResponseModel(
-    val meals: List<MealX>
+    val meals: List<Meal>
 )
